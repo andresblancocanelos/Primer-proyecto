@@ -1,0 +1,111 @@
+$bg-primary:#1e1e24;
+$bg-secondary:#6649b8;
+$text-primary:#fff;
+$text-secondary:#ff8282;
+
+@mixin pantalla($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) { @content; }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) { @content; }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+}
+
+
+html {
+    background:$bg-primary;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    color:$text-primary;
+}
+h1 {
+    padding:1.75rem 0;
+    font-size:1.75rem;
+    @include pantalla(desktop-up) {
+      font-size:2.5rem;
+    }
+    @include pantalla(big-desktop-up) {
+      font-size: 3rem;
+    }
+}
+
+h2 {
+  padding:1.5rem 0;
+  font-size:1.5rem;
+  @include pantalla(desktop-up) {
+    font-size:2rem;
+  }
+  @include pantalla(big-desktop-up) {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  padding:1.5rem 0;
+  @include pantalla(phone-only) {
+    font-size:0.60rem;
+  }
+  @include pantalla(tablet-portrait-up) {
+    font-size:0.75rem;
+  }
+  @include pantalla(tablet-landscape-up) {
+    font-size:0.9rem;
+  }
+  @include pantalla(desktop-up) {
+    font-size:1.1rem;
+  }
+  @include pantalla(big-desktop-up) {
+    font-size:1.25rem;
+  }
+}
+
+body::-webkit-scrollbar {
+    width: 1rem;
+}
+body::-webkit-scrollbar-track {
+    background:#50505f;
+    border-radius: 10px;
+    border: solid 1px rgba(255, 255, 255, 0.25);
+}
+body::-webkit-scrollbar-thumb {
+    background:$bg-secondary;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $text-secondary;
+}
+::selection {
+    background: $text-secondary; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: $text-secondary; /* Gecko Browsers */
+}
+
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

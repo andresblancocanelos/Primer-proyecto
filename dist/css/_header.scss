@@ -1,0 +1,132 @@
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height:54px;
+    padding: 0 10%;
+    font-weight: 300;
+    @include pantalla(tablet-portrait-up) {
+        height:80px;
+    }
+    @include pantalla(big-desktop-up) {
+        padding: 0 15%;
+    }
+    @include pantalla(desktop-up) {
+        font-size: 1.3rem;
+      }
+    
+    &_logo-container {
+        width:30%;
+        text-transform: uppercase;
+        a > :nth-child(2n) {
+            font-weight: 900;
+            color:#ff8282;
+        }
+    }
+    &_menu {
+        border-top: solid 1px #ff8282;
+        width:100%;
+        height:calc(100vh - 54px);
+        position: absolute;
+        left:0;
+        top:54px;
+        flex-direction: column;
+        background:#1e1e24;
+        padding:3rem 10% 0 10%;
+            li {
+                text-transform: uppercase;
+                padding:2rem 0;
+                a {
+                    font-weight: 900;
+                }
+            }
+
+        @include pantalla(tablet-portrait-up) {
+            border-top:none;
+            width:70%;
+            background:rgba(0, 0, 0, 0);
+            position: static;
+            height:20px;
+            padding:0;
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                li {
+                    text-transform: unset;
+                    padding:0 0.35em;
+                    a {
+                        @include pantalla(tablet-landscape-up) {
+                            font-weight: 400;
+                          }
+                    }
+                    @include pantalla(tablet-landscape-up) {
+                        padding:0 1.6em;
+                      }
+                }
+                a:hover {
+                    color:#ff8282;
+                }
+            }
+          }
+    }
+}
+
+.hidden-menu {
+    display:none;
+    @include pantalla(tablet-portrait-up) {
+        display:block;
+    }
+  }
+
+.menu-btn {
+    position: absolute;
+    z-index: 1;
+    cursor:pointer;
+    right:10%;
+    top: 0.5rem;
+    height:20px;
+    width:28px;
+    @include pantalla(tablet-portrait-up) {
+                display:none;
+            }
+    &_burger {
+        position: absolute;
+        right:0;
+        top:1rem;
+        width:28px;
+        height:3px;
+        background:white;
+
+        &::before {
+            content:'';
+            position: absolute;
+            top:-8px;
+            width: 28px;
+            height:3px;
+            background: white;
+        }
+
+        &::after {
+            content:'';
+            position: absolute;
+            top:8px;
+            width: 20px;
+            height:3px;
+            background: white;
+        }
+    }
+    .open {
+        background: transparent;
+    }
+    .open::before {
+        width:28px;
+        transform: rotate(45deg) translate(5px, 8px);
+    }
+    .open::after {
+        width:28px;
+        transform: rotate(-45deg) translate(3px, -7px);
+    }
+}
+
