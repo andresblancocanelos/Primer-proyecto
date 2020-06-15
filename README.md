@@ -1,2 +1,2 @@
-# Primer-proyecto
-Mi primer proyecto personal
+# Portfolio
+Mi primer portfolio
