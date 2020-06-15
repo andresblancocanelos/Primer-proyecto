@@ -103,14 +103,61 @@
     }
     .cartas-proyectos-grid {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
-        .cartas {
-            width:500px;
-            height:500px;
-            margin:25px;
-            background-color: transparentize($bg-secondary, $amount: 0.5) ;
+        position: relative;
+        margin: 50px auto;
+        width:75%;
+        height:60vh;
+        border-radius: 25px;
+        border:solid 3px white;
+        overflow: hidden;
+        .cartas-bg {
+            width:100%;
+            height: 100%;
+            background-image: url('/dist/img/Nomadict.jpg');
+            background: url('../img/Nomadict.jpg') no-repeat;
+            background-position: center;
+            background-size:cover;
+            filter: blur(4px);
+        }
+        .cartas-info {
+            padding:2rem;
+            position: absolute;
+            height:80%;
+            width:80%;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 25px;
+            border: solid 3px black;
+            background:rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h3 {
+                padding:0;
+                color:#343744;
+                font-size: 1rem;
+                font-weight: 900;
+                text-align: center;
+                padding-bottom: 1rem;
+            }
+            p {
+                text-align: center;
+                color:#343744;
+                font-size: 0.6rem;
+            }
+            @include pantalla(tablet-landscape-up) {
+                h3 {
+                    font-size: 2rem;
+                }
+                p {
+                    padding:0 5rem;
+                    font-size: 1rem;
+                }
+            }
         }
     }
 }
