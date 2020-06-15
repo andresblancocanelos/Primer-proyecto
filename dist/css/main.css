@@ -315,18 +315,18 @@ body::-webkit-scrollbar-thumb {
           transform: rotate(-45deg) translate(3px, -7px);
 }
 
-/*----------------------------PRIMERA SECCIÓN---------------------------------*/
-.first-section {
+/*----------------------------HERO SECCIÓN---------------------------------*/
+.hero-section {
   padding: 0 10%;
 }
 
 @media (min-width: 1800px) {
-  .first-section {
+  .hero-section {
     padding: 0 15%;
   }
 }
 
-.first-section .hero {
+.hero-section .container {
   height: calc(80vh);
   width: 100%;
   display: -webkit-box;
@@ -339,12 +339,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 900px) {
-  .first-section .hero {
+  .hero-section .container {
     height: calc(100vh - 80px);
   }
 }
 
-.first-section .hero ._hero-left {
+.hero-section .container ._hero-left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -358,17 +358,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 900px) {
-  .first-section .hero ._hero-left {
+  .hero-section .container ._hero-left {
     width: 50%;
     padding-right: 20px;
   }
 }
 
-.first-section .hero ._hero-left h1 {
+.hero-section .container ._hero-left h1 {
   font-weight: 900;
 }
 
-.first-section .hero ._hero-left_botones {
+.hero-section .container ._hero-left_botones {
   margin-top: 2rem;
   display: -ms-grid;
   display: grid;
@@ -378,13 +378,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 900px) {
-  .first-section .hero ._hero-left_botones {
+  .hero-section .container ._hero-left_botones {
     -ms-grid-columns: 1fr 1fr 25%;
         grid-template-columns: 1fr 1fr 25%;
   }
 }
 
-.first-section .hero ._hero-left_botones button {
+.hero-section .container ._hero-left_botones button {
   cursor: pointer;
   border-radius: 2rem;
   font-size: 0.75rem;
@@ -393,24 +393,24 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 900px) {
-  .first-section .hero ._hero-left_botones button {
+  .hero-section .container ._hero-left_botones button {
     font-size: 0.9rem;
   }
 }
 
-.first-section .hero ._hero-img {
+.hero-section .container ._hero-img {
   display: none;
   margin: 6rem 0;
   width: 50%;
 }
 
 @media (min-width: 900px) {
-  .first-section .hero ._hero-img {
+  .hero-section .container ._hero-img {
     display: inline-block;
   }
 }
 
-.first-section .hero ._hero-img img {
+.hero-section .container ._hero-img img {
   width: 100%;
 }
 
@@ -425,21 +425,50 @@ body::-webkit-scrollbar-thumb {
   border: solid 1px #fff;
 }
 
-/*----------------------------SEGUNDA SECCIÓN---------------------------------*/
-.second-section h2 {
+/*----------------------------PROYECTOS SECCIÓN---------------------------------*/
+.proyectos-section h2 {
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
 }
 
-.second-section .testimonials {
+.proyectos-section .cartas-proyectos-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.proyectos-section .cartas-proyectos-grid .cartas {
+  width: 500px;
+  height: 500px;
+  margin: 25px;
+  background-color: rgba(102, 73, 184, 0.5);
+}
+
+/*----------------------------TESTIMONIALS SECCIÓN---------------------------------*/
+.testimonials-section h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.testimonials-section .testimonials {
   position: relative;
   width: 100%;
   text-align: center;
   overflow: hidden;
 }
 
-.second-section .testimonials::before {
+.testimonials-section .testimonials::before {
   content: '';
   display: block;
   position: absolute;
@@ -447,7 +476,7 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
 }
 
-.second-section .testimonials ul {
+.testimonials-section .testimonials ul {
   margin: 0 auto;
   padding: 5rem 0;
   -webkit-transition: -webkit-transform .6s;
@@ -456,13 +485,13 @@ body::-webkit-scrollbar-thumb {
   transition: transform .6s, -webkit-transform .6s;
 }
 
-.second-section .testimonials ul::after {
+.testimonials-section .testimonials ul::after {
   content: '';
   display: table;
   clear: both;
 }
 
-.second-section .testimonials li {
+.testimonials-section .testimonials li {
   float: left;
   list-style: none;
   cursor: pointer;
@@ -479,7 +508,7 @@ body::-webkit-scrollbar-thumb {
   transition: transform .6s, -webkit-transform .6s;
 }
 
-.second-section .testimonials li img {
+.testimonials-section .testimonials li img {
   width: 5rem;
   border-radius: 50%;
   margin-top: -2.5rem;
@@ -487,13 +516,13 @@ body::-webkit-scrollbar-thumb {
           box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.second-section .testimonials li blockquote {
+.testimonials-section .testimonials li blockquote {
   width: 80%;
   margin: 0 auto;
   padding: 2rem 0;
 }
 
-.second-section .quote {
+.testimonials-section .quote {
   position: relative;
   z-index: 1;
   font-size: 0.75rem;
@@ -502,12 +531,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 600px) {
-  .second-section .quote {
+  .testimonials-section .quote {
     font-size: 1rem;
   }
 }
 
-.second-section .quote::before {
+.testimonials-section .quote::before {
   content: '\201c';
   font-size: 4rem;
   color: #ff8282;
@@ -521,26 +550,26 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 600px) {
-  .second-section .quote::before {
+  .testimonials-section .quote::before {
     top: 1rem;
     left: -2rem;
     font-size: 8rem;
   }
 }
 
-.second-section .testimonials footer {
+.testimonials-section .testimonials footer {
   border-top: 1px solid #6649b8;
   padding: 2rem 0;
 }
 
 @media (min-width: 600px) {
-  .second-section .testimonials footer {
+  .testimonials-section .testimonials footer {
     width: 50%;
     margin: auto;
   }
 }
 
-.second-section .author {
+.testimonials-section .author {
   display: block;
   font-size: 1.5rem;
   font-family: 'Playfair Display', sans-serif;
@@ -549,12 +578,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 600px) {
-  .second-section .author {
+  .testimonials-section .author {
     font-size: 1.75rem;
   }
 }
 
-.second-section .info {
+.testimonials-section .info {
   font-size: 0.5rem;
   color: #B1B4BD;
   width: 60%;
@@ -562,7 +591,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 1rem;
 }
 
-.second-section .testimonials li.current_slide {
+.testimonials-section .testimonials li.current_slide {
   -webkit-transform: scale(1);
           transform: scale(1);
   cursor: inherit;
@@ -570,25 +599,25 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 950px) {
-  .second-section .testimonials li {
+  .testimonials-section .testimonials li {
     max-width: 580px;
   }
 }
 
 @media screen and (max-width: 760px) {
-  .second-section .testimonials li {
+  .testimonials-section .testimonials li {
     max-width: 400px;
   }
 }
 
 @media screen and (max-width: 530px) {
-  .second-section .testimonials li {
+  .testimonials-section .testimonials li {
     max-width: 300px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .second-section .testimonials li {
+  .testimonials-section .testimonials li {
     max-width: 200px;
   }
 }

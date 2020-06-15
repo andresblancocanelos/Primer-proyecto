@@ -1,14 +1,13 @@
   @import 'config';
   @import 'header';
 
-/*----------------------------PRIMERA SECCIÓN---------------------------------*/
-
-  .first-section {
+/*----------------------------HERO SECCIÓN---------------------------------*/
+  .hero-section {
     padding: 0 10%;
     @include pantalla(big-desktop-up) {
         padding: 0 15%;
     }
-    .hero {
+    .container {
         height:calc(80vh);
         width:100%;
         display: flex;
@@ -95,9 +94,29 @@
     background: $bg-primary;
     border: solid 1px $text-primary;
 }
+/*----------------------------PROYECTOS SECCIÓN---------------------------------*/
+.proyectos-section {
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+    .cartas-proyectos-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        .cartas {
+            width:500px;
+            height:500px;
+            margin:25px;
+            background-color: transparentize($bg-secondary, $amount: 0.5) ;
+        }
+    }
+}
 
-/*----------------------------SEGUNDA SECCIÓN---------------------------------*/
-.second-section {
+/*----------------------------TESTIMONIALS SECCIÓN---------------------------------*/
+.testimonials-section {
     h2 {
         text-align: center;
         text-transform: uppercase;
